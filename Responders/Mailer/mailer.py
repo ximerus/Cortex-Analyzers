@@ -55,7 +55,7 @@ class Mailer(Responder):
         msg['To'] = mail_to
         msg['Date'] = formatdate(localtime=True)
         msg['Message-ID'] = make_msgid()
-        msg.attach(MIMEText(description, 'plain'))
+        msg.attach(MIMEText(description, 'plain', 'us-ascii'))
         
         
         s = smtplib.SMTP(self.smtp_host, self.smtp_port)
